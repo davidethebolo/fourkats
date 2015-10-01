@@ -1,0 +1,11 @@
+language: java
+
+install: mvn clean install
+
+jdk:
+  - oraclejdk8
+
+notifications:
+  email:
+    - davide.bolognini@gmail.com
+    - alessandro.berra@gmail.com	
