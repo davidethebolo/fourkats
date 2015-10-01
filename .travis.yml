@@ -7,5 +7,8 @@ jdk:
 
 notifications:
   email:
-    - davide.bolognini@gmail.com
-    - alessandro.berra@gmail.com	
+    recipients:
+      - davide.bolognini@gmail.com
+      - alessandro.berra@gmail.com
+    on_success: change
+    on_failure: always	
