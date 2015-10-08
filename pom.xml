@@ -3,8 +3,8 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.fourcats</groupId>
-    <artifactId>test_artifact</artifactId>
+    <groupId>org.fourkats</groupId>
+    <artifactId>test</artifactId>
     <version>0.1.0</version>
 
     <parent>
@@ -34,4 +34,16 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
