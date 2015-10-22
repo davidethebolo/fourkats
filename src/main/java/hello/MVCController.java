@@ -1,8 +1,10 @@
 package hello;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,6 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MVCController
 {
+
+  // @Override
+  // public void addViewControllers(ViewControllerRegistry registry)
+  // {
+  // registry.addViewController("/result").setViewName("result");
+  // }
 
   @RequestMapping(value = "/fetch_quote_html")
   public String fetchQuoteHtml(
@@ -30,9 +38,14 @@ public class MVCController
   }
 
   @RequestMapping(value = "/end", method = RequestMethod.POST)
-  public String greetingSubmit(@ModelAttribute Greeting greeting, Model model)
+  public String greetingSubmit(@Valid Greeting greeting, BindingResult bindingResult)
   {
-    model.addAttribute("greeting", greeting);
+
+    if (bindingResult.hasErrors())
+    {
+      return "greeting_form";
+    }
+
     return "result";
   }
 
